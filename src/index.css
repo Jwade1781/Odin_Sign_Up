@@ -1,21 +1,22 @@
 :root {
-    --globalPadding: 10px;
-    --bgColorOne: #2185d5;
-    --bgColorTwo: #202020;
-    --bgColorThree: #505050;
-    --bgColorInvalid: red;
-    --bgColorValid: #4c8b55;
-
-    --accentColorOne: orange;
+    --smPadding: 10px;
+    --medPadding: 25px;
+    --lgPadding: 50px;
 
     --lightColor: #f3f3f3;
     --darkColor: #222;
+    --accentColor1: orange;
+    --accentColor2: lightblue;
+
+    --fontLight: white;
+    --fontDark: black;
 
     --roundBorder: 10px;
     --circleBorder: 50%;
 }
 
-html, body{
+html,
+body {
     overflow: hidden;
     margin: 0px;
     padding: 0px;
@@ -28,34 +29,78 @@ body {
     flex-direction: row;
 }
 
-#leftContainer, #rightContainer {
-    padding: var(--globalPadding);
+#leftContainer,
+#rightContainer {
+    padding: var(--smPadding);
 }
 
-#leftContainer{
-    width: 100%;
+#leftContainer {
+    width: 75%;
     height: 100%;
     background-image: url("../data/img/mountainBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    border-right: 3px solid var(--accentColor1);
+    border-radius: var(--roundBorder);
+    color: var(--fontLight);
 }
+
+#rightContainer {
+    display: flex;
+    align-items: center;
+    padding: var(--smPadding);
+    width: 50%;
+    background-color: var(--lightColor);
+}
+
+#rightContainer>#rightBox>h2,
+#rightContainer>#rightBox>h4 {
+    text-align: center;
+}
+
+#rightBox {
+    background-color: var(--accentColor2);
+    border-radius: var(--roundBorder);
+    padding: var(--smPadding);
+    color: var(--fontDark);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
 
 #leftBox {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
     width: 100%;
     top: 3rem;
     background-color: rgba(2, 2, 2, 0.8);
-    display: flex;
-    flex-direction: row;
     color: var(--lightColor);
-    align-items: center;
-    align-content: center;
 }
 
-#leftBox > h2 {
+#leftBox>h2 {
     text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merienda', cursive;
+}
+
+h2 {
+    font-size: clamp(1.2rem, -0.875rem + 3vw, 2.2rem);
+}
+
+h4 {
+    font-size: clamp(1rem, -0.875rem + 2vw, 2rem);
 }
 
 #logo {
     height: 2rem;
+    padding-left: var(--smPadding);
 }
