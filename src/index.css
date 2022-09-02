@@ -1,0 +1,61 @@
+:root {
+    --globalPadding: 10px;
+    --bgColorOne: #2185d5;
+    --bgColorTwo: #202020;
+    --bgColorThree: #505050;
+    --bgColorInvalid: red;
+    --bgColorValid: #4c8b55;
+
+    --accentColorOne: orange;
+
+    --lightColor: #f3f3f3;
+    --darkColor: #222;
+
+    --roundBorder: 10px;
+    --circleBorder: 50%;
+}
+
+html, body{
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+#leftContainer, #rightContainer {
+    padding: var(--globalPadding);
+}
+
+#leftContainer{
+    width: 100%;
+    height: 100%;
+    background-image: url("../data/img/mountainBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#leftBox {
+    position: relative;
+    width: 100%;
+    top: 3rem;
+    background-color: rgba(2, 2, 2, 0.8);
+    display: flex;
+    flex-direction: row;
+    color: var(--lightColor);
+    align-items: center;
+    align-content: center;
+}
+
+#leftBox > h2 {
+    text-align: center;
+}
+
+#logo {
+    height: 2rem;
+}
