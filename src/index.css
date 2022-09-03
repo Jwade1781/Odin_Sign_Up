@@ -7,12 +7,15 @@
     --darkColor: #222;
     --accentColor1: orange;
     --accentColor2: lightblue;
+    --accentColor3: grey;
 
     --fontLight: white;
     --fontDark: black;
 
     --roundBorder: 10px;
     --circleBorder: 50%;
+
+    --shadowBox1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 html,
@@ -35,9 +38,9 @@ body {
 }
 
 #leftContainer {
-    width: 75%;
     height: 100%;
-    background-image: url("../data/img/mountainBackground.jpg");
+    width: 45%;
+    background-image: url("../data/img/mountain2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     border-right: 3px solid var(--accentColor1);
@@ -48,8 +51,8 @@ body {
 #rightContainer {
     display: flex;
     align-items: center;
-    padding: var(--smPadding);
-    width: 50%;
+    padding: var(--lgPadding);
+    width: 75%;
     background-color: var(--lightColor);
 }
 
@@ -61,11 +64,13 @@ body {
 #rightBox {
     background-color: var(--accentColor2);
     border-radius: var(--roundBorder);
-    padding: var(--smPadding);
+    padding: var(--lgPadding);
     color: var(--fontDark);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: var(--shadowBox1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 
 #leftBox {
     position: relative;
@@ -79,8 +84,35 @@ body {
     color: var(--lightColor);
 }
 
+#rightBox > form {
+    max-width: fit-content;
+    background-color: var(--accentColor3);
+    padding: var(--medPadding);
+    box-shadow: var(--shadowBox1);
+    border-radius: var(--roundBorder);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: row;
+    gap: var(--smPadding);
+}
+.inputs {
+    align-items: center;
+    padding: var(--smPadding);
+    display: flex;
+    flex-direction: column;
+}
+
 #leftBox>h2 {
     text-align: center;
+}
+
+#buttons {
+    align-items: center;
 }
 
 h1,
@@ -101,6 +133,8 @@ h4 {
 }
 
 #logo {
-    height: 2rem;
-    padding-left: var(--smPadding);
+    width: clamp(2rem, 0.875rem + 2vw, 2.5rem);
+    height: auto;
+    padding: var(--smPadding);
+    
 }
