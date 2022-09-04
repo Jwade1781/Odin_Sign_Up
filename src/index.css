@@ -13,6 +13,7 @@
     --fontDark: black;
 
     --roundBorder: 10px;
+    --roundTopBottomRightBorder: 0% var(--roundBorder) var(--roundBorder) 0%;;
     --circleBorder: 50%;
 
     --shadowBox1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -32,16 +33,10 @@ body {
     flex-direction: row;
 }
 
-#leftContainer,
-#rightContainer {
-    padding: var(--smPadding);
-}
-
 #leftContainer {
     height: 100%;
     width: 100%;
-    border-right: 3px solid var(--accentColor1);
-    border-radius: var(--roundBorder);
+    border-right: .2rem solid var(--accentColor1);
     color: var(--fontLight);
     position: relative;
     padding: 0px;
@@ -56,17 +51,17 @@ body {
     background-position: center;
 }
 
+#leftContainer,
+#background {
+    border-radius: var(--roundTopBottomRightBorder);
+}
+
 #rightContainer {
     display: flex;
     align-items: center;
     padding: var(--lgPadding);
     width: 75%;
     background-color: var(--lightColor);
-}
-
-#rightContainer>#rightBox>h2,
-#rightContainer>#rightBox>h4 {
-    text-align: center;
 }
 
 #rightBox {
@@ -84,6 +79,7 @@ body {
     position: absolute;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: row;
     margin: var(--smPadding);
@@ -94,10 +90,9 @@ body {
 }
 
 #rightBox > form {
-    max-width: fit-content;
-    background-color: var(--accentColor3);
-    padding: var(--medPadding);
+    width: fit-content;
     box-shadow: var(--shadowBox1);
+    padding: var(--medPadding);
     border-radius: var(--roundBorder);
     display: flex;
     flex-direction: column;
@@ -109,6 +104,7 @@ body {
     flex-direction: row;
     gap: var(--smPadding);
 }
+
 .inputs {
     align-items: center;
     padding: var(--smPadding);
@@ -131,6 +127,7 @@ h4,
 h5,
 h6 {
     font-family: 'Merienda', cursive;
+    text-align: center;
 }
 
 h2 {
@@ -146,6 +143,11 @@ h4 {
     height: auto;
     padding: var(--smPadding);
     
+}
+
+.frostedGlassBackground {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255,255,255,0.5);
 }
 
 .fadeIn {
