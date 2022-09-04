@@ -39,13 +39,21 @@ body {
 
 #leftContainer {
     height: 100%;
-    width: 45%;
-    background-image: url("../data/img/mountain2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 100%;
     border-right: 3px solid var(--accentColor1);
     border-radius: var(--roundBorder);
     color: var(--fontLight);
+    position: relative;
+    padding: 0px;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    background-image: url("../data/img/mountain2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #rightContainer {
@@ -73,12 +81,13 @@ body {
 }
 
 #leftBox {
-    position: relative;
+    position: absolute;
     display: inline-flex;
     align-items: center;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    margin: var(--smPadding);
+    width: calc(100% - (2 * var(--smPadding)));
     top: 3rem;
     background-color: rgba(2, 2, 2, 0.8);
     color: var(--lightColor);
@@ -137,4 +146,51 @@ h4 {
     height: auto;
     padding: var(--smPadding);
     
+}
+
+.fadeIn {
+    animation: fadeInAnimation 1.5s linear forwards;
+}
+
+.fadeOut {
+    animation: fadeOutAnimation 1.5s linear forwards;
+}
+
+
+@keyframes fadeBlackAnimation {
+    100% {
+        color: var(--fontColorLight);
+        background-color: var(--fontColorDark);
+    }
+}
+
+@keyframes bounceAnimation {
+    100% {
+        margin-top: var(--paddingSm);
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        filter: blur(2px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1.0;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        filter: blur(0px);
+        opacity: 1.0;
+    }
+
+    100% {
+        filter: blur(2px);
+        opacity: 0;
+        ;
+    }
 }
